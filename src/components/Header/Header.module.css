@@ -1,0 +1,7 @@
+.header_title{
+  flex: 1;
+  font-size: 1.5rem;
+  color: #FF971D;
+  font-weight: 600;
+  cursor: pointer;
+}
