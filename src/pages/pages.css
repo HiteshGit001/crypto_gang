@@ -1,0 +1,4 @@
+.home_card_flex{
+  display: flex;
+  flex-direction: row;
+}
