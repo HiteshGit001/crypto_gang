@@ -1,14 +1,19 @@
 import { useEffect } from 'react';
 import CoinCard from '../components/CoinCard/CoinCard';
 import { useData } from '../dataContext/Context';
-import { fetchTrending } from '../services/fetchapi.service';
+import { fetchCoins, fetchTrending } from '../services/fetchapi.service';
 import "./pages.css";
 
 const Home = () => {
-  const { trending, setTrending, currency, setSymbol } = useData();
+  const { trending, setTrending, currency, setSymbol, selectedCoins, setSelectedCoins } = useData();
   const getTrendingCoin = async (currency) => {
     const response = await fetchTrending(currency);
     setTrending(response);
+  }
+  const getSelectedCoin = async (coinId) => {
+    const response = await fetchCoins(coinId);
+    setSelectedCoins(response);
+    console.log(selectedCoins,"sel");
   }
   useEffect(() => {
     getTrendingCoin(currency);
@@ -19,7 +24,7 @@ const Home = () => {
     else {
       setSymbol("$");
     }
-  }, [currency]);
+  }, [currency, selectedCoins]);
   const numberWithCommas = (value) => {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
@@ -36,6 +41,8 @@ const Home = () => {
                   symbols={trending[id].symbol}
                   profit={trending[id].price_change_percentage_24h >= 0}
                   priceChangePercent={trending[id].price_change_percentage_24h}
+                  coinId={trending[id].id}
+                  getSelectedCoin={getSelectedCoin}
                 />
               </div>
             )
