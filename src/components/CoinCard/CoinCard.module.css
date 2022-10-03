@@ -1,6 +1,7 @@
 .coin_card {
   margin: 0.5rem;
   padding: 1.5rem;
+  cursor: pointer;
 }
 
 p {
@@ -16,10 +17,14 @@ p {
   text-transform: uppercase;
 }
 
-.loss{
+.loss {
   color: red;
 }
 
-.profit{
+.profit {
   color: green;
+}
+
+.profit::before {
+  content: "+";
 }
