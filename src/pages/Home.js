@@ -13,10 +13,10 @@ const Home = () => {
   useEffect(() => {
     getTrendingCoin(currency);
     console.log(currency, "df");
-    if(currency==="inr"){
+    if (currency === "inr") {
       setSymbol("₹");
     }
-    else{
+    else {
       setSymbol("$");
     }
   }, [currency]);
@@ -30,7 +30,13 @@ const Home = () => {
           trending.map((item, id) => {
             return (
               <div key={id}>
-                <CoinCard icon={trending[id].image} price={numberWithCommas(trending[id].current_price)} />
+                <CoinCard
+                  icon={trending[id].image}
+                  price={numberWithCommas(trending[id].current_price)}
+                  symbols={trending[id].symbol}
+                  profit={trending[id].price_change_percentage_24h >= 0}
+                  priceChangePercent={trending[id].price_change_percentage_24h}
+                />
               </div>
             )
           })
