@@ -1,4 +1,53 @@
-.home_card_flex{
+.home_card_flex {
   display: flex;
   flex-direction: row;
+  padding: 1.5rem;
+}
+
+/* coin page */
+.coin {
+  padding: 1.5rem;
+}
+
+.coin_card {
+  padding: 1.5rem;
+  max-width: 35%;
+}
+
+.coin_dis {
+  text-align: justify;
+}
+
+.coin_img {
+  width: 55%;
+  margin: auto;
+}
+
+.coin_title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #FF971D;
+  line-height: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.public_score{
+  font-size: 1.25rem;
+  color: #FF971D;
+  text-align: left;
+  margin: 0.5rem 0;
+}
+
+.coin_high{
+  text-align: left;
+  color: green;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.coin_low{
+  text-align: left;
+  color: red;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
