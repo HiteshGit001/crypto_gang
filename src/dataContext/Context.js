@@ -10,6 +10,8 @@ const Context = ({ children }) => {
   const [selectedCoins, setSelectedCoins] = useState('');
   const [loading, setLoading] = useState(true);
   const [history, setHistory] = useState([]);
+  const [GlobalMarket, setGlobalMarket] = useState({});
+  const [listing, setListing] = useState([]);
 
   const values ={
     trending, setTrending,
@@ -17,7 +19,9 @@ const Context = ({ children }) => {
     symbol, setSymbol,
     selectedCoins, setSelectedCoins,
     loading, setLoading,
-    history, setHistory
+    history, setHistory,
+    GlobalMarket, setGlobalMarket,
+    listing, setListing,
   }
   return (
     <ContextData.Provider value={values}>
