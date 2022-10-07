@@ -25,7 +25,7 @@ function App() {
         <BrowserRouter>
           <Header />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/crypto_gang" element={<Home />} />
             <Route path="/coin/:id" element={<Coins />} />
           </Routes>
         </BrowserRouter>
