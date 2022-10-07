@@ -24,15 +24,14 @@ ChartJS.register(
 );
 
 const Chart = () => {
-  const { currency, history, setHistory } = useData()
+  const { currency, history, setHistory, selectedCoins } = useData()
   const getChartData = async () => {
-    let response = await fetchHistory();
+    let response = await fetchHistory(selectedCoins.id,1,currency);
     setHistory(response);
-    console.log(history, "hist");
   }
   useEffect(() => {
     getChartData();
-  }, []);
+  }, [selectedCoins.id,currency]);
   const options = {
     responsive: true,
     plugins: {
@@ -44,19 +43,20 @@ const Chart = () => {
   };
 
   const labels = history?.prices?.map((ele, id) => {
-    return ele[0];
+    const timestamp = ele[0] // This would be the timestamp you want to format
+    return new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(timestamp);
   });
 
   const data = {
     labels,
     datasets: [
       {
-        label: 'Dataset 1',
+        label: `${selectedCoins.name}`,
         data: history?.prices?.map((ele, id) => {
           return ele[1];
         }),
-        borderColor: 'red',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderColor: 'gold',
+        backgroundColor: 'gold',
       },
     ],
   };

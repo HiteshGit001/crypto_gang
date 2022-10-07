@@ -1,17 +1,21 @@
 .home_card_flex {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   padding: 1.5rem;
+  flex-wrap: wrap;
 }
 
 /* coin page */
 .coin {
   padding: 1.5rem;
+  display: flex;
 }
 
 .coin_card {
   padding: 1.5rem;
-  max-width: 35%;
+  width: 50%;
 }
 
 .coin_dis {

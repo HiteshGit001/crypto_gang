@@ -18,7 +18,7 @@ const Coins = ({ coinId }) => {
           <CircularProgress />
         </Box>
           :
-          <div className="coin" style={{display:'flex'}}>
+          <div className="coin">
             <Card className="coin_card">
               <div className="coin_img">
                 <img src={selectedCoins.image.large} alt={selectedCoins.name} />
