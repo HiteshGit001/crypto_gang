@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/crypto_gang/static/css/main.fc239d73.css",
+    "main.js": "/crypto_gang/static/js/main.c3783283.js",
+    "static/js/787.6612ea80.chunk.js": "/crypto_gang/static/js/787.6612ea80.chunk.js",
+    "index.html": "/crypto_gang/index.html",
+    "main.fc239d73.css.map": "/crypto_gang/static/css/main.fc239d73.css.map",
+    "main.c3783283.js.map": "/crypto_gang/static/js/main.c3783283.js.map",
+    "787.6612ea80.chunk.js.map": "/crypto_gang/static/js/787.6612ea80.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fc239d73.css",
+    "static/js/main.c3783283.js"
+  ]
+}
